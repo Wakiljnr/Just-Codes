@@ -1,0 +1,43 @@
+body {
+  color: #414141;  /* Dark gray */
+  background-color: #EEEEEE;   /* Light gray */
+  font-size: 18px;
+}
+
+h1 {
+    font-size: 2em;
+  }
+
+  h2 {
+    font-size: 1.6em;
+  }
+/*
+ unit of measurement
+px (pixel)
+em (m) (1, 1.6 amd 2 of px)
+ */
+
+ h1, h2, h3, h4, h5, h6 {
+    font-family: "Helvetica", "Arial", sans-serif;
+font-weight: normal;  
+}
+/* we can select multiple html elements
+by seperating them with a comma*/
+/*list styling*/
+ul {
+    list-style-type: circle;
+  }
+  
+  ol {
+    list-style-type: lower-roman;
+  }
+
+  /*remove underline*/
+  a {
+    text-decoration: none;
+  }
+/*text alignment*/
+
+  p {
+    text-align: left;
+  }

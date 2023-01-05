@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Selection</h1>
+
+    <script>
+      
+var red = true;
+var blue = false;
+var green;
+var num = 5;
+var otherNum = 6;
+var notNum = "5";
+
+// num == anotherNum (true);
+//num == anotherNum (false);
+
+if (num == otherNum){
+    console.log("statement is true");
+}
+else {
+    console.log("statement is false");
+}
+
+ //colour selection 
+ var colours = ["red", "green", "blue", "yellow"];
+            var selectedColour = colours[0];
+if (selectedColour === "red") { console.log("The selected colour is red");}
+else if (selectedColour === "green") {console.log("The selected colour is green"); }
+else if (selectedColour === "blue") {console.log("The selected colour is blue");}
+else if (selectedColour === "yellow") {console.log("The selected colour is yellow");} 
+else {console.log("The selected colour is not in the list");} 
+ 
+// switch
+
+var goodMood = false;
+var gotSleep = false;
+var gotPaid = false;
+
+if (goodMood || gotPaid || gotSleep)
+{
+    console.log("Today is a good day");
+}
+else {
+    console.log("I am angry") }
+                
+
+    /*         var myString = "I'm really hungry for some ";
+    console.log(myString);
+        var myUpperString = myString.toUpperCase();
+        console.log(myUpperString);
+
+        var foods = ["eba", "yam", "beans", "plantain"];
+        // use string literal syntax to print myString and first item in foods
+        console.log(`${myString} ${foods[0]}`);
+
+        // use loop to print myString and each value in foods
+        for (i = 0; i < foods.length; i++) {
+            console.log(`${myString} ${foods[i]}`);
+        }
+
+        //if index in foods is even, convert to uppercase, else don't convert
+        for (i = 0; i < foods.length; i++) {
+            if (i % 2 === 0) {
+                console.log(`${myString} ${foods[i].toUpperCase()}`);
+            } else {
+                console.log(`${myString} ${foods[i]}`);
+            }
+            */
+    
+
+
+var myString = " I'M really hungry for some";
+console.log(myString);
+
+var myUpperString = myString.toUpperCase();
+console.log(myUpperString);
+
+   // use string literal syntax to print myString and first item in foods
+var foods = ["eba", "yam", "beans", "rice"];
+console.log(`${myString} ${foods[0]}`);
+
+ //if index in foods is even, convert to uppercase, else don't convert
+ for (i = 0; i < foods.length; i++)
+ {
+    console.log(`${myString} ${foods[i]}`);
+ }
+
+//if index in foods is even, convert to uppercase, else don't convert
+for ( i = 0; i < foods.length; i++)
+{
+    if (i % 2 === 0){
+        console.log(`${myString} ${foods[i].toUpperCase()}`);
+    }
+    else {
+        console.log(`${myString} ${foods[i]}`);
+    }
+}
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
