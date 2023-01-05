@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>proof of work example javascript</h1>
+    <p>This code defines a proofOfWork function 
+        that takes in a header and a difficultyBits parameter 
+        and returns an array containing the resulting hash and nonce. 
+        It also has a loop that iterates over difficultyBits values from 0 to 31,
+         calculates the difficulty for each value, generates a new block by concatenating a string 
+         with the previous block's hash, and calls the proofOfWork function to find a valid nonce for the new block.
+         It then calculates the elapsed time and estimates the hashes per second.</p>
+</body>
+<script>
+
+        
+         const hashlib = require('hashlib');
+
+         const maxNonce = 2 ** 32;  // 4 billion
+         
+         function proofOfWork(header, difficultyBits) {
+           // calculate the difficulty target
+           const target = 2 ** (256 - difficultyBits);
+         
+           for (let nonce = 0; nonce < maxNonce; nonce++) {
+             const hashResult = hashlib.sha256(`${header}${nonce}`).hexdigest();
+         
+             // check if this is a valid result, equal to or below the target
+             if (parseInt(hashResult, 16) <= target) {
+               console.log(`Success with nonce ${nonce}`);
+               console.log(`Hash is ${hashResult}`);
+               return [hashResult, nonce];
+             }
+           }
+         
+           console.log(`Failed after ${nonce} (maxNonce) tries`);
+           return nonce;
+         }
+         
+         for (let difficultyBits = 0; difficultyBits < 32; difficultyBits++) {
+           const difficulty = 2 ** difficultyBits;
+           console.log(`Difficulty: ${difficulty} (${difficultyBits} bits)`);
+           console.log('Starting search...');
+         
+           // checkpoint the current time
+           const startTime = Date.now();
+         
+           // make a new block which includes the hash from the previous block
+           // we fake a block of transactions - just a string
+           const newBlock = `test block with transactions${hashResult}`;
+         
+           // find a valid nonce for the new block
+           const [hashResult, nonce] = proofOfWork(newBlock, difficultyBits);
+         
+           // checkpoint how long it took to find a result
+           const endTime = Date.now();
+         
+           const elapsedTime = endTime - startTime;
+           console.log(`Elapsed Time: ${elapsedTime} seconds`);
+         
+           if (elapsedTime > 0) {
+             // estimate the hashes per second
+             const hashPower = Math.floor(nonce / elapsedTime);
+             console.log(`Hashing Power: ${hashPower} hashes per second`);
+           }
+         }         
+
+        </script>
+       
+      
+</html>
